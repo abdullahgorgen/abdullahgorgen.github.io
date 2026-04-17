@@ -1,54 +1,68 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Hakkımda</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hakkımda — Abdullah Görgen</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Hakkımda</h1>
-        <p>Kendimi ve hedeflerimi tanıttığım sayfa</p>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="contact.html">İletişim</a></li>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">AG<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="about.html" class="active">Hakkımda</a></li>
+        <li><a href="interests.html">İlgi Alanlarım</a></li>
+        <li><a href="contact.html">İletişim</a></li>
+        <li><a href="contactform.html">Form</a></li>
+        <li><a href="lab2.html">Lab 2</a></li>
+        <li><a href="lab3.html">Lab 3</a></li>
+        <li><a href="lab5.html">Lab 5</a></li>
+        <li><a href="lab6-1.html">Lab 6-1</a></li>
+        <li><a href="lab6-2.html">Lab 6-2</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SAYFA BAŞLIĞI -->
+  <div class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Ben Kimim?</span>
+      <h1>Hakkımda</h1>
+      <p>Bilgisayar Mühendisliği öğrencisi. Teknoloji tutkunu ve sürekli öğrenmeye açık biri.</p>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <div class="card">
+        <h2>Kendimden Kısaca</h2>
+        <p>Merhaba, ben Abdullah Görgen. Marmara Üniversitesi Bilgisayar Mühendisliği bölümünde eğitimime devam ediyorum. Teknolojiye olan ilgim beni her gün yeni şeyler öğrenmeye teşvik ediyor.</p>
+        <p>Yazılım dünyasında kendimi geliştirmeyi, temiz ve modüler kodlar yazarak kullanışlı sistemler tasarlamayı hedefliyorum. Derin öğrenme ve siber güvenlik odaklandığım başlıca alanlar arasında yer alıyor.</p>
+        
+        <h2 style="margin-top: 2rem;">Eğitim</h2>
+        <ul class="styled-list">
+          <li>Marmara Üniversitesi - Bilgisayar Mühendisliği (Lisans)</li>
         </ul>
-    </nav>
 
-    <main>
-        <h2>Ben Kimim?</h2>
-        <p>Merhaba, ben <strong>Bilgisayar Mühendisliği öğrencisiyim</strong>. Teknolojiye, araştırmaya ve yeni sistemler keşfetmeye büyük ilgi duyuyor, kendimi bu alanda geliştirmeyi hedefliyorum.</p>
-        <p>Özellikle <em>sinir ağları mimarileri</em>, <em>siber güvenlik projeleri</em> ve <em>Arch Linux / Hyprland</em> gibi sistem yöneticiliği konularında çalışmalar yapmayı seviyorum.</p>
-
-        <h2>Eğitim Bilgilerim</h2>
-        <ul>
-            <li>Marmara Üniversitesi</li>
-            <li>Bilgisayar Mühendisliği</li>
-            <li>Web Programlama Dersi</li>
+        <h2 style="margin-top: 2rem;">Hedeflerim</h2>
+        <ul class="styled-list">
+          <li>Mevcut projelerimi en iyi şekilde tamamlamak.</li>
+          <li>Yeni ve modern web teknolojilerini projelerime entegre etmek.</li>
+          <li>Açık kaynak sistemlere ve projelere katkıda bulunmak.</li>
         </ul>
+      </div>
+    </div>
+  </div>
 
-        <h2>Motivasyonum</h2>
-        <blockquote>
-            "İyi kurgulanmış bir mimari ve temiz kod, hem geliştiriciyi hem de sistemi mutlu eder."
-        </blockquote>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Abdullah Görgen — Web Programlama Dersi</p>
+    </div>
+  </footer>
 
-        <h2>Projelerim ve Hedeflerim</h2>
-        <ol>
-            <li>Uydu görüntülerinden nesne tespiti (Mask R-CNN) projemi tamamlamak</li>
-            <li>Ağ tarayıcı (Network Scanner) betiklerini geliştirmek</li>
-            <li>Modern web teknolojilerini projelerime entegre etmek</li>
-        </ol>
-
-        <p><a href="index.html">&larr; Ana sayfaya geri dön</a></p>
-    </main>
-
-    <footer>
-        <hr>
-        <p>© 2026 Abdullah Görgen | Web Programlama Dersi</p>
-    </footer>
 </body>
 </html>
