@@ -293,11 +293,22 @@
         <!-- 1) NAVBAR -->
         <nav class="navbar">
             <div class="logo">LOGO</div>
-            <div class="nav-links">
+            <div class="nav-links" style="list-style: none;">
                 <li><a href="index.html" class="active">Ana Sayfa</a></li>
                 <li><a href="#about">Hakkında</a></li>
                 <li><a href="#services">Dersler</a></li>
                 <li><a href="#contact">İletişim</a></li>
+                <li>
+                  <select id="labSelector" style="padding: 6px 10px; border-radius: 6px; border: 1px solid #ddd; background: #fff; color: #333; font-size: 0.9rem; cursor: pointer; margin-left: 10px;">
+                    <option value="" selected disabled>Lab Seçiniz</option>
+                    <option value="2">Lab 2</option>
+                    <option value="3">Lab 3</option>
+                    <option value="5">Lab 5</option>
+                    <option value="6-1">Lab 6.1</option>
+                    <option value="6-2">Lab 6.2</option>
+                    <option value="7">Lab 7</option>
+                  </select>
+                </li>
             </div>
         </nav>
 
@@ -393,5 +404,17 @@
             © 2026 - Temel Flexbox Örneği
         </footer>
     </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const labSelector = document.getElementById('labSelector');
+      if (labSelector) {
+        labSelector.addEventListener('change', function() {
+          if (this.value) {
+            window.location.href = `lab${this.value}.html`;
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
