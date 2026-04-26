@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const formUyari = document.getElementById('formUyari');
     const sonucAlani = document.getElementById('sonucAlani');
 
+    // Bu bayrak, submit sonrası programatik reset'in sonuç alanını
+    // silmesini engellemek için kullanılır.
+    let submitSonrasiReset = false;
+
     if (basvuruFormu) {
         basvuruFormu.addEventListener('submit', function(event) {
             // Sayfa yenilenmesini engelle
@@ -54,10 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Başarılı durum: "Başvuru Özetiniz" kartını oluştur
             const ozetHTML = `
                 <div class="card border-0 shadow-sm rounded-4 text-start">
-                    <div class="card-header bg-success text-white py-3 px-4 rounded-top-4 border-0">
-                        <h5 class="card-title mb-0 fw-bold"><i class="bi bi-check-circle-fill me-2"></i> Başvuru Özetiniz</h5>
+                    <div class="card-header bg-danger text-white py-3 px-4 rounded-top-4 border-0">
+                        <h5 class="card-title mb-0 fw-bold"><i class="bi bi-x-circle-fill me-2"></i> Başvurunuz Reddedildi</h5>
                     </div>
                     <div class="card-body p-4 p-md-5">
+                        <div class="alert alert-danger mb-4 rounded-3 border-0">
+                            <strong>Maalesef!</strong> Kriterlere uygun olmadığınız için etkinliğe kabul edilmediniz. Yine de form verileriniz aşağıdadır:
+                        </div>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <p class="mb-1 text-secondary small fw-semibold">Ad Soyad</p>
@@ -96,10 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // sonucAlani'ni güncelle ve stil sınıfı ekle
             sonucAlani.className = 'mt-2';
-            sonucAlani.style = '';
+            sonucAlani.removeAttribute('style');
             sonucAlani.innerHTML = ozetHTML;
 
-            // Formu temizle
+            // Formu temizle (bayrağı ayarla ki reset handler sonucu silmesin)
+            submitSonrasiReset = true;
             basvuruFormu.reset();
             
             // Sonucu göstermek için kaydır
@@ -108,6 +116,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         basvuruFormu.addEventListener('reset', function() {
             formUyari.classList.add('d-none');
+
+            // Eğer reset, submit sonrası programatik olarak çağrıldıysa
+            // sonuç alanını sıfırlama (özeti koru)
+            if (submitSonrasiReset) {
+                submitSonrasiReset = false;
+                return;
+            }
+
+            // Sadece kullanıcı "Formu Temizle" butonuna bastığında sonucu sıfırla
             sonucAlani.className = 'alert alert-info rounded-3 border-0 py-3 px-4 mx-auto shadow-sm';
             sonucAlani.style.maxWidth = '900px';
             sonucAlani.innerHTML = 'Henüz başvuru özeti oluşturulmadı. Formu doldurduktan sonra sonuç burada görünecek.';
